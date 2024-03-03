@@ -1,0 +1,110 @@
+Past, present and future work:
+
+ WaVeC is not a completed work, as the version suggest WaVeC is a port of programs that
+ were written during my PHD to provide tools to calculate wave properties and wave velocities. 
+ WaVeC components are mostly implemented in diverse individual tools, the aim of WaVeC 
+ is to gather these tools into an united functional tool.
+ 
+ The next steps to improve and keep building over the already done work are:
+
+ Version 0.1
+ -Calculation of linear wave velocities in deep waters->done
+ -Allow user defined file of data->done.
+ 
+ Version 0.2:
+
+ -Calculation of linear waves in transitional deep waters->done (not implemented as solutions are to small)
+ -User defined path/name to the file were the wave properties are stored->done
+ -Manual/How-to->done
+ -initial documentation->in process
+
+
+ Version 0.3:
+
+ -Calculation of linear waves in shallow waters->done
+ -Re-make function to divide linear from 2nd order waves ->done, some problems were found to fit the function that divides the space between Airy and 2nd Order, the boundary where h->0 and H->0 at the limit in h=0.2 ended abruptly then making the waves to calculate wrong their order.  
+ -(Postponed util version 1.X)Use of PTHREADS to improve the speed of the calculations making use of multicores->done but not implemented, dynamic allocation of cores, memory and arrays has been postponed to version 1.X as this processes will require a rewriting of all code and more heavy tools.
+ -Testing compilation on Linux (problems with memory functions)->done/solved
+
+ 
+ Version 0.4:
+-Statistical functions to define some characteristics of the components (pre version)->gathering information (possible only basic functions), calculation of spectral density by power formula, maximum velocities, frequency component and depth of interaction. Velocities are calculated along the maximums of each theory that fits the waves. The power spectra will be changed at 0.5 as this depends on the density (T/Pressure variant).
+-Calculation of power coefficients of each components->done
+-Start basic documentation->in work
+-Comparison against linear wave data using other software tools->partially done: linear deep water waves and transitional water waves.
+ -Testing compilation on BSD->done
+
+
+Version 0.5
+ -Calculation of power density depending on variables that change the water mass->In review as its must suffice that changes are important enough to be taken into account, done it is already on the spectral file produced.
+ -Testing of simple current profiles in the water column->in work, will be added to 0.6.
+ -Calculation of second order waves -> done, will go to 0.3.
+ -Algorithm to define if a wave is linear or second order, based on an approximate mapping of the non-dimensional wave properties as functions of f(nd,nh) where 
+ nd=non-dimensional depth and nh= non-dimensional height-> done, it will go to 0.3
+ -Comparison against linear wave data using other software tools on 2nd order model-> partially done under transitional water waves at 2nd order, in process to complete.
+ -Calculation of the pressure gradient below the water-In work, done it is currently implemented into 0.5!.
+ -Calculation of spectral data as frequency, power and maximum induced velocities per spectra->done!.
+
+ Version 0.6:
+ -Disband of libraries to make the code more functional->done.
+ -Expansion of statistical functions to derive information from the 1st and 2nd order swell waves composing the given spectrum-->done.
+ 
+ Version 0.6a:
+ -Review for errors and comparison against other tools->in the making!->done!.
+  Version 0.6b:
+  -Influence of physical-chemical gradients in the column!-> in the making! (revision of the influence of density on gradient values*)->done it!(physical values of density affect the pressure gradient by at least 2-3% of its original, still as the code is fast the function is keep. Isothermal lines in the water column do not see its value affected due to the mixing of waves and their process to move the heat around the first 1/3 of 500m of water column)
+  Version 0.6c:
+  -divide iteration processes into single functions and more optimisation of the code speed->done!.
+  
+ 
+ 
+
+Version 0.7:
+-Algorithm to define stepper wave systems of 3rd, 4th and 5th order->done but not implemented->done using simple mapped functions from its values to the non-dimensional space that defines the wave theory (as suggested by Le Mauthe).
+
+Version 0.7a:
+-Calculation of third order wave velocities and pressure gradient.-> calculated at deep water at hd->if not implemented yet, no need of convergence so far <3!. Third order all in transitional waters with asymptotic corrections to eliminate terms tested working so far, new calculations and libraries for the dispersion relationships in the making, comparing results to analytic expressions in the making!. Dispersion relationships tested and working, adding 3rd order with its dispersion relationship->In the making!. closing pointers and collecting memory leaks->done!. Verifying 1st, 2nd and 3rd order models and deep and transitional deep waters->In he making!. Verifying processing speed of components-In the making!. Verification of results up to 3rd order, done in deep to transitional waters!. 
+Version 0.7b:
+-Calculation of 4th order wave velocities and pressure gradient.
+Analysis of the 4th order wave model, in the making, analysis of the order of the terms for every depth range-> in the making!, re-order of expressions from Fenton works and reduced terms to ensure shorter expressions -> in the making!. New dispersion relationship terms at 4th order tested, convergence fine, formulation NOT based on Fenton combines a new formulation and the old Fenton expansion. Convergence fast-> two to four single operations do not need of lengthy calculations. Values obtained-> acceptable under the range and expected physical qualities of the wave compared between a 3rd order and a 4th order wave at very close non-dimeniosnal values. Optimisation of the series operations/maths->in the making!. 4th order-> done!, possibly today will be up ^_^!.
+Version 0.7c:
+-Calculation of 5th order wave velocities and pressure gradient.
+Analysis of the 5th order wave model, in the making, analysis of the order of the terms for every depth range-> in the making!, re-order of expressions from Fenton works and reduced terms to ensure shorter expressions -> DONE, FINALLY!.
+
+
+Version 0.8a: 
+-Support for ARM architecture (m1/m2 apple/silicon and arm cortex/series)
+-More optimisation of the calculations.
+-OpenMP-multicore processing (depending on peformance).
+
+Version 0.8b: 
+-Cnoidal wave model!
+-Test and addition of the stream data from buoy systems, using the NOAA averaging method and buoy characteristics.
+-Tools to simulate the data streams mimicking the live systems using a USB controller.
+
+Version0.8c:
+-Fitting techniques to calculate the wave profile velocity.
+-Re optimisation of the compile process and review of it to gain more speed.
+-Re-do manual in pdf.
+-Re-made documentation.
+
+
+
+Version 0.9
+-Integration simple current models in the water column.
+-Fitting techniques for the overall flow profile along the water column.
+
+Version 1.0
+-Integration of simple turbulence layer at bottom
+-Re-do manual in pdf.
+-Re-do documentation.
+-Start parallel GUI* (Not joined with black tern but as an add on)
+
+Pre 1.1
+-Rewrite of the code using dynamic memory allocation, core dynamic, dynamic individual data streams.
+
+Release and start merging with white crow(wind wave spectra program) and grey rabbit (IA interpreting engine) 
+
+- GTK integration.
+
+
